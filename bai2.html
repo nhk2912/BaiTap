@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+
+    <style>
+        body {
+            background-color: #FFFFFF;
+            transition: background-color 0.5s;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333333;
+        }
+        #color-group{
+            display: flex !important;
+            justify-content: center;
+        }
+        
+        #colorResult {
+            font-size: 24px;
+        }
+        
+        #gradientBox {
+            width: 400px;
+            height: 200px;
+            background-image: linear-gradient(to right, #FF0000, #FFFF00);
+            transition: background-image 0.5s;
+        }
+        #color-picker{
+            width: 600px;
+        }
+
+        #btn-1, #btn-2{
+            width: 200px;
+            height: 40px;
+            background-color: blueviolet;
+            opacity: 0.4;
+            border-radius: 8px;
+            color: white;
+        }
+
+        #btn-1:hover{
+            cursor: pointer;
+        }
+
+        #btn-2:hover{
+            cursor: pointer;
+        }
+
+        #color-div {
+            width: 200px;
+            height: 200px;
+            background-color: #000000;
+            
+        }
+        
+    </style>
+
+</head>
+<body>
+    <h1>Bộ lọc màu</h1>
+    <button id="btn-1" onclick="generateColor()">Pick màu ngẫu nhiên</button><br>
+    <button id="btn-2"onclick="copyToClipboard()">Copy mã màu</button>
+    
+    <h2 id="colorResult">#FFFFFF</h2>
+    <div id="color-group">
+        <div id="color-div"></div>
+        <div id="gradientBox"></div>
+    </div>
+    
+    
+
+    <input type="color" id="color-picker">
+    
+    
+
+
+    <script>
+        function generateColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            
+            document.body.style.backgroundColor = color;
+            document.getElementById('colorResult').innerHTML = color;
+            document.getElementById('gradientBox').style.backgroundImage = "linear-gradient(to right, " + color + ", #FFFF00)";
+        }
+        
+        function copyToClipboard() {
+            var colorText = document.getElementById('colorResult');
+            var tempInput = document.createElement('input');
+            
+            document.body.appendChild(tempInput);
+            tempInput.value = colorText.innerHTML;
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999);
+            
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            
+            alert("Mã màu đã được copy: " + colorText.innerHTML);
+        }
+
+
+        var colorPicker = document.getElementById("color-picker");
+        var colorDiv = document.getElementById("color-div");
+
+        colorPicker.addEventListener("change", function() {
+        colorDiv.style.backgroundColor = colorPicker.value;
+        });
+
+    </script>
+</body>
+</html>

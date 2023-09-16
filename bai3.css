@@ -1,0 +1,82 @@
+.row .col .p1 {
+    color: #FFF;
+    font-family: Space Grotesk;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 400px;
+    height: 230px;
+    margin-left: 50px;
+    margin-top: 100px;
+
+}
+
+body {
+    background-color: #1C233D !important;
+
+}
+
+.row .col .p2 {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-left: 50px;
+
+}
+
+.btn1 {
+    display: inline-flex;
+    padding: 8px 31px 9px 29px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: linear-gradient(86deg, rgba(191, 196, 238, 0.09) -105.02%, #C367E6 10.94%, rgba(190, 206, 239, 0.00) 121.57%);
+}
+
+.btn2 {
+    display: inline-flex;
+    padding: 10px 48px 10px 47px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: linear-gradient(86deg, rgba(191, 196, 238, 0.09) -105.02%, #C367E6 10.94%, rgba(190, 206, 239, 0.00) 121.57%);
+    margin-left: 50px;
+}
+
+.number {
+    display: flex;
+    justify-content: space-around;
+    color: #FFF;
+    font-family: Space Grotesk;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+}
+
+.option {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    color: #E5E5E5;
+    font-family: Space Grotesk;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.backgroundimg{
+    margin-top: 100px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    gap: 120px;
+}
